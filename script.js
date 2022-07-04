@@ -11,12 +11,74 @@ var todo16= document.querySelector("#sixteen");
 function displayTime() {
     var time2 = moment().format('MMMM Do YYYY, h:mm:ss a')
     $('#currentDay').html(time2);
-    setTimeout(displayTime, 1000);
+    setTimeout(displayTime, 1000); 
 }
 
 $(document).ready(function() {
     displayTime();
 });
+
+//Change textarea background color based on time
+var checkTime = function () {
+    var currentTime = moment().format('H');
+    if (9 < currentTime) {
+        $(todo9).addClass("past");
+    } else if (9 > currentTime) {
+        $(todo9).addClass("future");
+    } else {
+        $(todo9).addClass("present");
+    }
+    if (10 < currentTime) {
+        $(todo10).addClass("past");
+    } else if (10 > currentTime) {
+        $(todo10).addClass("future");
+    } else {
+        $(todo10).addClass("present");
+    }
+    if (11 < currentTime) {
+        $(todo11).addClass("past");
+    } else if (11 > currentTime) {
+        $(todo11).addClass("future");
+    } else {
+        $(todo11).addClass("present");
+    }
+    if (12 < currentTime) {
+        $(todo12).addClass("past");
+    } else if (12 > currentTime) {
+        $(todo12).addClass("future");
+    } else {
+        $(todo12).addClass("present");
+    }
+    if (13 < currentTime) {
+        $(todo13).addClass("past");
+    } else if (13 > currentTime) {
+        $(todo13).addClass("future");
+    } else {
+        $(todo13).addClass("present");
+    }
+    if (14 < currentTime) {
+        $(todo14).addClass("past");
+    } else if (14 > currentTime) {
+        $(todo14).addClass("future");
+    } else {
+        $(todo14).addClass("present");
+    }
+    if (15 < currentTime) {
+        $(todo15).addClass("past");
+    } else if (15 > currentTime) {
+        $(todo15).addClass("future");
+    } else {
+        $(todo15).addClass("present");
+    }
+    if (16 < currentTime) {
+        $(todo16).addClass("past");
+    } else if (16 > currentTime) {
+        $(todo16).addClass("future");
+    } else {
+        $(todo16).addClass("present");
+    }
+}
+setInterval(checkTime(), (1000));
 
 //functions for saving/displaying textarea content
 $(document).ready(function() {
@@ -116,3 +178,4 @@ function display16(){
    todo16.textContent = display16
    console.log (display16)
 }
+
